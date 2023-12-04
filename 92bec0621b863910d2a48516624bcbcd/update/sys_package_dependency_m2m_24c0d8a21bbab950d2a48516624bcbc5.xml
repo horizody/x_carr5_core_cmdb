@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Model Management" source="com.snc.model">e8fb925e1b2321107af886a7624bcbfb</dependency>
+        <min_version>1.0</min_version>
+        <sys_created_by>abakas.admin</sys_created_by>
+        <sys_created_on>2023-12-01 20:47:14</sys_created_on>
+        <sys_id>24c0d8a21bbab950d2a48516624bcbc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_updated_by>abakas.admin</sys_updated_by>
+        <sys_updated_on>2023-12-01 20:47:14</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>
