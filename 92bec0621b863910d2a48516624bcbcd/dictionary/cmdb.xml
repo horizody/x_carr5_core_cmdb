@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="extension_model=partition,largeTable=true" db_object_id="ec0c1a5e1b2321107af886a7624bcb9c" label="Base Configuration Item" max_length="40" name="cmdb" type="collection">
+        <element choice="1" choice_field="fed_data_status" choice_table="x_carr5_core_fed_config_choice" label="Fed Data Status" max_length="40" name="x_carr5_ccmdb_data_status" type="choice">
+            <choice/>
+        </element>
+        <element label="Fed Global Location" max_length="32" name="x_carr5_ccmdb_global_loc" reference="cmn_location" type="reference"/>
+        <element label="Fed Global Model" max_length="32" name="x_carr5_ccmdb_global_model" reference="cmdb_model" type="reference"/>
+        <element label="Fed Global Org" max_length="32" name="x_carr5_ccmdb_global_org" reference="cmn_department" type="reference"/>
+        <element label="Fed Local Only" max_length="40" name="x_carr5_ccmdb_local_only" type="boolean"/>
+        <element choice="1" choice_field="fed_record_status" choice_table="x_carr5_core_fed_config_choice" label="Fed Record Status" max_length="40" name="x_carr5_ccmdb_record_status" type="choice">
+            <choice/>
+        </element>
+        <element label="Fed SOR Owner" max_length="32" name="x_carr5_ccmdb_sor_owner" reference="x_carr5_core_fed_config_instance" type="reference"/>
+        <element label="Fed Source Instance" max_length="32" name="x_carr5_ccmdb_source_instance" reference="x_carr5_core_fed_config_instance" type="reference"/>
+        <index name="index">
+            <element name="x_carr5_ccmdb_global_loc"/>
+        </index>
+        <index name="index2">
+            <element name="x_carr5_ccmdb_global_model"/>
+        </index>
+        <index name="index3">
+            <element name="x_carr5_ccmdb_global_org"/>
+        </index>
+        <index name="index4">
+            <element name="x_carr5_ccmdb_sor_owner"/>
+        </index>
+        <index name="index5">
+            <element name="x_carr5_ccmdb_source_instance"/>
+        </index>
+    </element>
+</database>
