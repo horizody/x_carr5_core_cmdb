@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_relationship">
+    <sys_relationship action="DELETE">
+        <advanced>false</advanced>
+        <apply_to/>
+        <basic_apply_to>x_carr5_ccmdb_principal_class</basic_apply_to>
+        <basic_query_from>x_carr5_ccmdb_field_mapping</basic_query_from>
+        <insert_callback/>
+        <name>Staging Table</name>
+        <query_from/>
+        <query_with><![CDATA[(function refineQuery(current, parent) {
+
+	// Add your code here, such as current.addQuery(field, value);
+    current.addQuery("principal_class", parent.principal_class);
+	
+})(current, parent);]]></query_with>
+        <reference_field/>
+        <related_list/>
+        <simple_reference>false</simple_reference>
+        <sys_class_name>sys_relationship</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-23 16:41:14</sys_created_on>
+        <sys_id>9dbdb7d947ec4610a9c9de94116d43ef</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Staging Table</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_update_name>sys_relationship_9dbdb7d947ec4610a9c9de94116d43ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-23 17:24:40</sys_updated_on>
+    </sys_relationship>
+    <sys_translated_text action="DELETE" query="documentkey=9dbdb7d947ec4610a9c9de94116d43ef"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</application>
+        <file_path/>
+        <instance_id>7c5fe2ccdb16311892f5684e1396194e</instance_id>
+        <instance_name>dev198190</instance_name>
+        <name>sys_relationship_9dbdb7d947ec4610a9c9de94116d43ef</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_relationship"&gt;&lt;sys_relationship action="INSERT_OR_UPDATE"&gt;&lt;advanced&gt;false&lt;/advanced&gt;&lt;apply_to/&gt;&lt;basic_apply_to&gt;x_carr5_ccmdb_principal_class&lt;/basic_apply_to&gt;&lt;basic_query_from&gt;x_carr5_ccmdb_field_mapping&lt;/basic_query_from&gt;&lt;insert_callback/&gt;&lt;name&gt;Staging Table&lt;/name&gt;&lt;query_from/&gt;&lt;query_with&gt;&lt;![CDATA[(function refineQuery(current, parent) {
+
+	// Add your code here, such as current.addQuery(field, value);
+    current.addQuery("principal_class", parent.principal_class);
+	
+})(current, parent);]]&gt;&lt;/query_with&gt;&lt;reference_field/&gt;&lt;related_list/&gt;&lt;simple_reference&gt;false&lt;/simple_reference&gt;&lt;sys_class_name&gt;sys_relationship&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-02-23 16:41:14&lt;/sys_created_on&gt;&lt;sys_id&gt;9dbdb7d947ec4610a9c9de94116d43ef&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Staging Table&lt;/sys_name&gt;&lt;sys_package display_value="Core CMDB" source="x_carr5_ccmdb"&gt;92bec0621b863910d2a48516624bcbcd&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Core CMDB"&gt;92bec0621b863910d2a48516624bcbcd&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_relationship_9dbdb7d947ec4610a9c9de94116d43ef&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-02-23 17:24:40&lt;/sys_updated_on&gt;&lt;/sys_relationship&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=9dbdb7d947ec4610a9c9de94116d43ef"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-944395975</payload_hash>
+        <record_name>Staging Table</record_name>
+        <reverted_from/>
+        <source>3eaa2cde47bbb110a9c9de94116d43ce</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-23 17:24:40</sys_created_on>
+        <sys_id>2cf74c6947208610a9c9de94116d433c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18dd6ff6df30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-23 17:24:40</sys_updated_on>
+        <type>Relationship</type>
+        <update_guid>e0f74c6977208610845594617d97223c</update_guid>
+        <update_guid_history>e0f74c6977208610845594617d97223c:-944395975,5e3708293d208610e28031e8d81c639e:1093714779,940e3fd948ec4610816ed13e61832d07:-746552446</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-23 17:34:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_relationship">sys_relationship</sys_db_object>
+        <sys_id>22284044dddb449a8cc562857cb22664</sys_id>
+        <sys_metadata>9dbdb7d947ec4610a9c9de94116d43ef</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Staging Table</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_parent display_value="Principal Class">a7d8cb4b47144210a9c9de94116d4303</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_scope_delete display_value="">e8f5623274544f2a840cede7a4434e04</sys_scope_delete>
+        <sys_update_name>sys_relationship_9dbdb7d947ec4610a9c9de94116d43ef</sys_update_name>
+        <sys_update_version display_value="sys_relationship_9dbdb7d947ec4610a9c9de94116d43ef">2cf74c6947208610a9c9de94116d433c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-23 17:34:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
