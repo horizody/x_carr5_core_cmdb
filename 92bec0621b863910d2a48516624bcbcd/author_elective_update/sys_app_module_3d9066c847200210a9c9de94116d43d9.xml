@@ -65,7 +65,7 @@
         <update_guid_history>b59066c866200210ceb4cc4a6dc1eddc:-1495041050</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="CMDB Class Relationships">8afe3f5d47ec4610a9c9de94116d437b</sys_audit_delete>
+        <sys_audit_delete display_value="">8afe3f5d47ec4610a9c9de94116d437b</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-02-23 16:45:28</sys_created_on>

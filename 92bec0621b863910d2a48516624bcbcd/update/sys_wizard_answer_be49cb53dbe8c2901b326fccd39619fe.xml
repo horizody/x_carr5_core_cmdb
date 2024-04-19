@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>Field Mapping</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>Field Mapping</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Application File" name="Application File">561d22521b2321107af886a7624bcbf2</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>abakas.admin</sys_created_by>
+        <sys_created_on>2024-02-29 17:58:48</sys_created_on>
+        <sys_id>be49cb53dbe8c2901b326fccd39619fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Field Mapping</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_update_name>sys_wizard_answer_be49cb53dbe8c2901b326fccd39619fe</sys_update_name>
+        <sys_updated_by>abakas.admin</sys_updated_by>
+        <sys_updated_on>2024-02-29 17:58:48</sys_updated_on>
+        <table/>
+        <target_url>x_carr5_ccmdb_field_mapping.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>

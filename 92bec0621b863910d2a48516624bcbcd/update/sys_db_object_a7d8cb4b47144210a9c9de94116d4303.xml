@@ -17,7 +17,7 @@
         <provider_class/>
         <read_access>true</read_access>
         <scriptable_table>false</scriptable_table>
-        <super_class display_value="Data Lookup Matcher Rules" name="dl_matcher">d108b4ec3cb1311068bcf327dfe37f4c</super_class>
+        <super_class display_value="Data Lookup Matcher Rules" name="dl_matcher">2be0ee521be321107af886a7624bcbad</super_class>
         <sys_class_name>sys_db_object</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-02-16 13:04:07</sys_created_on>

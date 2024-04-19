@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element attributes="extension_model=partition,largeTable=true" db_object_id="ec0c1a5e1b2321107af886a7624bcb9c" label="Base Configuration Item" max_length="40" name="cmdb" type="collection">
+    <element attributes="extension_model=partition,kagami_csindex_enabled=true,largeTable=true" db_object_id="ec0c1a5e1b2321107af886a7624bcb9c" label="Base Configuration Item" max_length="40" name="cmdb" type="collection">
         <element choice="1" choice_field="fed_data_status" choice_table="x_carr5_core_fed_config_choice" label="Fed Data Status" max_length="40" name="x_carr5_ccmdb_data_status" type="choice">
             <choice/>
         </element>

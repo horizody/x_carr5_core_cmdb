@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Data Lookup and Record Matching Support" source="com.glide.data_lookup">27e0ee521be321107af886a7624bcba0</dependency>
+        <min_version>1.0.6</min_version>
+        <sys_created_by>abakas.admin</sys_created_by>
+        <sys_created_on>2024-02-29 17:58:48</sys_created_on>
+        <sys_id>83490f53dbe8c2901b326fccd3961912</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_updated_by>abakas.admin</sys_updated_by>
+        <sys_updated_on>2024-02-29 17:58:48</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>
