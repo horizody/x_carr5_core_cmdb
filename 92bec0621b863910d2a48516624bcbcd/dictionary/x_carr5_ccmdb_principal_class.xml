@@ -3,5 +3,6 @@
         <element label="GET CI SYSID API" max_length="100" name="get_server_sysid_api" type="string"/>
         <element attributes="allow_public=true" display="true" label="Principal Class" max_length="80" name="principal_class" type="table_name"/>
         <element attributes="allow_public=true" label="Staging Table" max_length="80" name="staging_table" type="table_name"/>
+        <element attributes="allow_public=true,base_table=cmdb_ci" label="Super Class" max_length="80" name="super_class" type="table_name"/>
     </element>
 </database>
