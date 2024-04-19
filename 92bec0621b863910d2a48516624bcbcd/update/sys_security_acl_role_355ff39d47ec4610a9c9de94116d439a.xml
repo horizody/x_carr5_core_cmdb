@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-23 16:47:04</sys_created_on>
+        <sys_id>355ff39d47ec4610a9c9de94116d439a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_carr5_ccmdb_field_mapping.x_carr5_ccmdb.base</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_security_acl display_value="x_carr5_ccmdb_field_mapping">295ff39d47ec4610a9c9de94116d4396</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_355ff39d47ec4610a9c9de94116d439a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-23 16:47:04</sys_updated_on>
+        <sys_user_role display_value="x_carr5_ccmdb.base" name="x_carr5_ccmdb.base">3e3f08661b863910d2a48516624bcb98</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

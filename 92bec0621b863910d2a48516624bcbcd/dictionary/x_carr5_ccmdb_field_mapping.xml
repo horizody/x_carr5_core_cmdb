@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="update_synch=true" db_object_id="fd2f7b1d47ec4610a9c9de94116d43fc" extends="dl_matcher" label="Field Mapping" max_length="40" name="x_carr5_ccmdb_field_mapping" type="collection">
+        <element dependent="table_name" dependent_on_field="table_name" label="Field Name" max_length="80" name="field_name" type="field_name" use_dependent_field="true"/>
+        <element label="Principal Class" max_length="32" name="principal_class" reference="x_carr5_ccmdb_principal_class" type="reference"/>
+        <element attributes="allow_public=true" label="Staging Table" max_length="80" name="staging_table" type="table_name"/>
+        <element dependent="staging_table" dependent_on_field="staging_table" label="Staging Table Field" max_length="80" name="staging_table_field" type="field_name" use_dependent_field="true"/>
+        <element attributes="allow_public=true,base_table=cmdb_ci" label="Table Name" max_length="80" name="table_name" type="table_name"/>
+        <index name="index">
+            <element name="principal_class"/>
+        </index>
+    </element>
+</database>

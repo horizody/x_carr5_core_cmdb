@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_carr5_ccmdb.coreCMDBUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>coreCMDBUtil</name>
+        <script><![CDATA[var coreCMDBUtil = Class.create();
+coreCMDBUtil.prototype = {
+    initialize: function() {
+        this.CONFIG_INSTANCE_TBL = "x_carr5_core_fed_config_instance";
+        this.CONFIG_PRINCIPAL_CLASS = "x_carr5_ccmdb_principal_class";
+        this.CONFIG_FIELD_MAPPING = "x_carr5_ccmdb_field_mapping";
+    },
+
+    // Get all local instances Details
+    getAllLocalInstanceConfigOBJ: function() {
+        var instSyncConfigOBJ = {};
+        var configInstanceGR = new GlideRecord(this.CONFIG_INSTANCE_TBL);
+        configInstanceGR.addActiveQuery();
+        configInstanceGR.addQuery("master", "false");
+        configInstanceGR.query();
+        while (configInstanceGR.next()) {
+            instSyncConfigOBJ[configInstanceGR.instance_name.toString()] = this.readInstanceConfigByGR(configInstanceGR);
+        }
+        return (instSyncConfigOBJ);
+    },
+
+    readInstanceConfigByGR: function(instanceConfigGR) {
+        var instConfigOBJ = {};
+        // read Instance Config
+        instConfigOBJ["url"] = instanceConfigGR.getValue("url");
+        instConfigOBJ["name"] = instanceConfigGR.getValue("instance_name");
+        instConfigOBJ["master"] = instanceConfigGR.getValue("master");
+
+        //gs.info("readInstanceConfigByGR:" + JSON.stringify(instConfigOBJ));
+        return (instConfigOBJ);
+
+    },
+
+    getPrincipalClassConfig: function() {
+        var principalClassConfigOBJ = {};
+        var configPrinClassGR = new GlideRecord(this.CONFIG_PRINCIPAL_CLASS);
+        configPrinClassGR.addActiveQuery();
+        configPrinClassGR.query();
+        while (configPrinClassGR.next()) {
+            principalClassConfigOBJ[configPrinClassGR.principal_class.toString()] = this.readPrincipalClassConfigByGR(configPrinClassGR);
+            //principalClassConfigOBJ = this.readPrincipalClassConfigByGR(configPrinClassGR);
+        }
+        return (principalClassConfigOBJ);
+    },
+
+    readPrincipalClassConfigByGR: function(configPrinClassGR) {
+        var classConfigOBJ = {};
+        // read Class Config
+        classConfigOBJ["PrincipalClassName"] = configPrinClassGR.getValue("principal_class");
+        classConfigOBJ["GETCIAPI"] = configPrinClassGR.getValue("get_server_sysid_api");
+        classConfigOBJ["StagingTable"] = configPrinClassGR.getValue("staging_table");
+
+        //gs.info("readPrincipalClassConfigByGR:" + JSON.stringify(classConfigOBJ));
+        return (classConfigOBJ);
+    },
+
+    readFieldsObject: function(configPrinClass) {
+        var tableConfig = {};
+        tableConfig.allFields = [];
+        var configFieldGR = new GlideRecord(this.CONFIG_FIELD_MAPPING);
+        configFieldGR.addActiveQuery();
+        configFieldGR.addQuery('principal_class.principal_class', configPrinClass);
+        configFieldGR.query();
+
+        while (configFieldGR.next()) {
+            var configFieldObject = this.readFieldsByGR(configFieldGR);
+
+            // Build All Fields array of configField object
+            tableConfig.allFields.push(configFieldObject);
+        }
+        return (tableConfig);
+    },
+
+    readFieldsByGR: function(configFieldGR) {
+
+        var fieldConfigOBJ = {};
+        fieldConfigOBJ["fieldName"] = configFieldGR.getValue("field_name");
+        fieldConfigOBJ["stagingFieldName"] = configFieldGR.getValue("staging_table_field");
+        return (fieldConfigOBJ);
+
+    },
+
+    getCIAttributes: function() {
+
+
+        var sourceInstanceOBJ = this.getAllLocalInstanceConfigOBJ();
+        //gs.info("Fed all Instances:----" + JSON.stringify(sourceInstanceOBJ));
+        for (var key in sourceInstanceOBJ) {
+            var sourceURL = JSON.stringify(sourceInstanceOBJ[key].url);
+            var sourceInstanceURL = sourceURL.replaceAll('"', '');
+
+            var instanceName = JSON.stringify(sourceInstanceOBJ[key].name);
+            var instanceNameToString = instanceName.replaceAll('"', '');
+
+            var PrincipalClassConfig = this.getPrincipalClassConfig();
+            //gs.info("Fed PrincipalClassConfig:----" + JSON.stringify(PrincipalClassConfig));
+            for (var key1 in PrincipalClassConfig) {
+
+                var readAllFields = this.readFieldsObject(PrincipalClassConfig[key1].PrincipalClassName);
+                gs.info("readAllFields:" + JSON.stringify(readAllFields));
+
+                var getCIAPI = JSON.stringify(PrincipalClassConfig[key1].GETCIAPI);
+                var getCIAPIToString = getCIAPI.replaceAll('"', '');
+                var stagingTable = JSON.stringify(PrincipalClassConfig[key1].StagingTable);
+                var stagingTableToString = stagingTable.replaceAll('"', '');
+
+
+
+                var authBasicProfile = new GlideRecord('sys_auth_profile_basic');
+                authBasicProfile.addQuery('name', instanceNameToString);
+                authBasicProfile.query();
+                if (authBasicProfile.next()) {
+                    var authBasicProfileSYSID = authBasicProfile.getUniqueValue();
+
+
+                    var request = new sn_ws.RESTMessageV2();
+                    var encodedURI = sourceInstanceURL + getCIAPIToString;
+                    gs.info("encodedURI:" + encodedURI);
+                    request.setEndpoint(encodedURI);
+                    request.setHttpMethod('GET');
+                    request.setAuthenticationProfile('basic', authBasicProfileSYSID);
+                    request.setRequestHeader("Accept", "application/json");
+                    request.setRequestHeader('Content-Type', 'application/json');
+
+                    var response = request.execute();
+                    var status = response.getStatusCode();
+
+                    //gs.info("HTTPS Status Response on CMDB Instance API for CI SYSID extraction:" + status);
+                    //gs.info("Response from CMDB Instance API for SYSID Extract:" + response.getBody());
+
+                    if (status == 200) {
+
+                        var answer = response.getBody();
+                        var parsedData = JSON.parse(answer);
+
+                        for (var item in parsedData.result) {
+                            //gs.info("SYSID:" + parsedData.result[item].sys_id);
+
+                            var ciSYSID = parsedData.result[item].sys_id;
+
+                            var requestCIAttributes = new sn_ws.RESTMessageV2();
+                            var encodedURIForCIAttributes = sourceInstanceURL + getCIAPIToString + "/" + ciSYSID;
+                            gs.info("encodedURIForCIAttributes:" + encodedURIForCIAttributes);
+                            requestCIAttributes.setEndpoint(encodedURIForCIAttributes);
+                            requestCIAttributes.setHttpMethod('GET');
+                            requestCIAttributes.setAuthenticationProfile('basic', authBasicProfileSYSID);
+                            requestCIAttributes.setRequestHeader("Accept", "application/json");
+                            requestCIAttributes.setRequestHeader('Content-Type', 'application/json');
+
+                            var responseForCIAttributes = requestCIAttributes.execute();
+                            var statusForCIAttributes = responseForCIAttributes.getStatusCode();
+
+                            if (statusForCIAttributes == 200) {
+                                var responseCIBody = responseForCIAttributes.getBody();
+
+                                var parsedCIData = JSON.parse(responseCIBody);
+
+                                for (var items in parsedCIData.result) {
+                                    gs.info("statusForCIAttributes:" + statusForCIAttributes);
+                                    gs.info("responseForCIAttributes:" + responseForCIAttributes.getBody());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+
+
+
+    type: 'coreCMDBUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-20 12:57:39</sys_created_on>
+        <sys_id>a6ece71c47e44210a9c9de94116d4394</sys_id>
+        <sys_mod_count>75</sys_mod_count>
+        <sys_name>coreCMDBUtil</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_update_name>sys_script_include_a6ece71c47e44210a9c9de94116d4394</sys_update_name>
+        <sys_updated_by>abakas.admin</sys_updated_by>
+        <sys_updated_on>2024-03-05 13:59:36</sys_updated_on>
+    </sys_script_include>
+</record_update>

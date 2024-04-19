@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="DELETE">
+        <active>true</active>
+        <answer>CMDB Class Relationship</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>CMDB Class Relationship</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Application File" name="Application File">e2dde25247323110a9c9de94116d4372</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-19 12:40:42</sys_created_on>
+        <sys_id>f190a6c847200210a9c9de94116d432f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CMDB Class Relationship</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_update_name>sys_wizard_answer_f190a6c847200210a9c9de94116d432f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-19 12:40:42</sys_updated_on>
+        <table/>
+        <target_url>x_carr5_ccmdb_cmdb_class_relationship.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</application>
+        <file_path/>
+        <instance_id>7c5fe2ccdb16311892f5684e1396194e</instance_id>
+        <instance_name>dev198190</instance_name>
+        <name>sys_wizard_answer_f190a6c847200210a9c9de94116d432f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer"><sys_wizard_answer action="INSERT_OR_UPDATE"><active>true</active><answer>CMDB Class Relationship</answer><button_label/><dependent_value/><element/><name>CMDB Class Relationship</name><next_question/><order>100</order><payload_name/><question display_value="Application File" name="Application File">e2dde25247323110a9c9de94116d4372</question><roles/><script/><sys_class_name>sys_wizard_answer</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-02-19 12:40:42</sys_created_on><sys_id>f190a6c847200210a9c9de94116d432f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>CMDB Class Relationship</sys_name><sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package><sys_policy/><sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope><sys_update_name>sys_wizard_answer_f190a6c847200210a9c9de94116d432f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-02-19 12:40:42</sys_updated_on><table/><target_url>x_carr5_ccmdb_cmdb_class_relationship.do</target_url><type>1</type></sys_wizard_answer></record_update>]]></payload>
+        <payload_hash>837553154</payload_hash>
+        <record_name>CMDB Class Relationship</record_name>
+        <reverted_from/>
+        <source>e4cdaa1247323110a9c9de94116d438c</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2023-12-01 13:34:41</sys_created_on>
+        <sys_id>fefe3f5d47ec4610a9c9de94116d43d4</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>18c2596ad680000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Answer</type>
+        <update_guid>befe3f5d03ec4610e45e025022e765d4</update_guid>
+        <update_guid_history>befe3f5d03ec4610e45e025022e765d4:837553154</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-23 16:45:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_wizard_answer">sys_wizard_answer</sys_db_object>
+        <sys_id>0f7b6a870c7840548a2732a21f69b510</sys_id>
+        <sys_metadata>f190a6c847200210a9c9de94116d432f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CMDB Class Relationship</sys_name>
+        <sys_package display_value="Core CMDB" source="x_carr5_ccmdb">92bec0621b863910d2a48516624bcbcd</sys_package>
+        <sys_parent display_value="Application File">e2dde25247323110a9c9de94116d4372</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Core CMDB">92bec0621b863910d2a48516624bcbcd</sys_scope>
+        <sys_scope_delete display_value="">e8f5623274544f2a840cede7a4434e04</sys_scope_delete>
+        <sys_update_name>sys_wizard_answer_f190a6c847200210a9c9de94116d432f</sys_update_name>
+        <sys_update_version display_value="sys_wizard_answer_f190a6c847200210a9c9de94116d432f">fefe3f5d47ec4610a9c9de94116d43d4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-23 16:45:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
